@@ -1,0 +1,18 @@
+[project]
+name = 'hikari-meow'
+dynamic = ['version']
+description = 'A components v2 handler for hikari, inspired by hikari-miru'
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+# [project.scripts]
+# meow = "meow.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/meow/_version.py"
+pattern = '__version__(?:: str)? *= *\"(?P<version>[^\"]+)\"'
