@@ -4,7 +4,17 @@ dynamic         = ['version']
 description     = 'A components v2 handler for hikari, inspired by hikari-miru (py >3.12 only)'
 readme          = "README.md"
 requires-python = ">=3.12"
-dependencies    = ["hikari>=2.5.0"]
+
+dependencies = [ #
+	"hikari==2.5.0",
+]
+
+[dependency-groups]
+dev = [ #
+	"mypy==2.1.0",
+	"pip==26.1.2", # vscode complaining there's no pip freeze...
+	"rich==15.0.0",
+]
 
 [build-system]
 requires      = ["hatchling"]
@@ -16,3 +26,6 @@ pattern = '__version__(?:: str)? *= *\"(?P<version>[^\"]+)\"'
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/meow"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
